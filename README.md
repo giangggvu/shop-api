@@ -1,4 +1,4 @@
-# Lá & Hạt — Shop API
+# Lá & Hạt - Shop API
 
 Backend for a small online tea and coffee shop: a public catalogue, accounts, a cart, checkout with VietQR bank transfer, and an admin area for products and orders.
 
