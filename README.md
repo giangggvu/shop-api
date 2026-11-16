@@ -4,7 +4,7 @@ Backend for a small online tea and coffee shop: a public catalogue, accounts, a 
 
 > **Tiếng Việt:** Máy chủ cho một cửa hàng trà và cà phê trực tuyến, viết bằng Java Spring Boot. Có danh mục sản phẩm, đăng nhập, giỏ hàng, đặt hàng, thanh toán chuyển khoản bằng mã VietQR và trang quản trị. Kiểm thử tự động chạy trên mỗi lần đẩy code.
 
-**Stack:** Java 21 · Spring Boot 3 · Spring Security (JSON Web Token) · Spring Data JPA · PostgreSQL · Flyway · springdoc OpenAPI · JUnit 5 · Docker · GitHub Actions
+**Stack:** Java 21 | Spring Boot 3 | Spring Security (JSON Web Token) | Spring Data JPA | PostgreSQL | Flyway | springdoc OpenAPI | JUnit 5 | Docker | GitHub Actions
 
 ---
 
@@ -35,7 +35,7 @@ Open **http://localhost:8080/swagger-ui.html** to try every endpoint in the brow
 Needs Java 21 and a PostgreSQL database named `shop` (user `shop`, password `shop`, or set `DB_URL`, `DB_USER`, `DB_PASSWORD`).
 
 ```bash
-docker compose up -d db        # or use your own PostgreSQL
+docker compose up -d db        # or use PostgreSQL
 mvn spring-boot:run
 ```
 
