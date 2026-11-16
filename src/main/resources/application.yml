@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: shop-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/shop}
+    username: ${DB_USER:shop}
+    password: ${DB_PASSWORD:shop}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+
+app:
+  jwt:
+    # Local development only. Set JWT_SECRET (at least 32 characters) everywhere else.
+    secret: ${JWT_SECRET:local-dev-secret-change-me-at-least-32-chars}
+    ttl: 24h
+  admin:
+    # When both are set, an admin account is created on startup if it does not exist yet.
+    email: ${ADMIN_EMAIL:}
+    password: ${ADMIN_PASSWORD:}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+  payment:
+    # VietQR bank transfer details. Leave empty to hide payment instructions.
+    bank-id: ${VIETQR_BANK_ID:}
+    account-no: ${VIETQR_ACCOUNT_NO:}
+    account-name: ${VIETQR_ACCOUNT_NAME:}
+    template: ${VIETQR_TEMPLATE:compact2}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

@@ -1,0 +1,60 @@
+### A full walkthrough. Run requests from top to bottom in IntelliJ IDEA or VS Code (REST Client).
+@base = http://localhost:8080
+
+### 1. Browse the catalogue (no login)
+GET {{base}}/api/products?category=tra&sort=price_asc
+
+### 2. Register a customer
+# @name register
+POST {{base}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "an.nguyen@example.com",
+  "password": "password-123",
+  "fullName": "Nguyễn Văn An"
+}
+
+@token = {{register.response.body.accessToken}}
+
+### 3. Add a product to the cart (product 1 is the Robusta in the sample data)
+POST {{base}}/api/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "productId": 1, "quantity": 2 }
+
+### 4. Check out
+# @name order
+POST {{base}}/api/orders
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "recipientName": "Nguyễn Văn An",
+  "phone": "0912345678",
+  "address": "12 Võ Thị Sáu, Hai Bà Trưng, Hà Nội",
+  "note": "Giao giờ hành chính"
+}
+
+@code = {{order.response.body.code}}
+
+### 5. See the order, with VietQR payment details
+GET {{base}}/api/orders/{{code}}
+Authorization: Bearer {{token}}
+
+### 6. Log in as admin (set ADMIN_EMAIL and ADMIN_PASSWORD before starting the app)
+# @name admin
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "admin@example.com", "password": "change-me" }
+
+@adminToken = {{admin.response.body.accessToken}}
+
+### 7. Mark the order as paid once the transfer arrives
+PATCH {{base}}/api/admin/orders/{{code}}/status
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{ "status": "PAID" }

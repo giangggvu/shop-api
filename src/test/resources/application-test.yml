@@ -1,0 +1,17 @@
+# Tests run on an in-memory H2 database in PostgreSQL mode, with the same Flyway migrations as production.
+spring:
+  datasource:
+    url: jdbc:h2:mem:shop;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+app:
+  jwt:
+    secret: test-secret-only-for-automated-tests-123456
+  admin:
+    email: admin@test.local
+    password: admin-password-123
+  payment:
+    bank-id: "970436"
+    account-no: "0123456789"
+    account-name: LA VA HAT
