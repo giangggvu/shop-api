@@ -5,6 +5,7 @@ Backend for a small online tea and coffee shop: a public catalogue, accounts, a 
 > **Tiếng Việt:** Máy chủ cho một cửa hàng trà và cà phê trực tuyến, viết bằng Java Spring Boot. Có danh mục sản phẩm, đăng nhập, giỏ hàng, đặt hàng, thanh toán chuyển khoản bằng mã VietQR và trang quản trị. Kiểm thử tự động chạy trên mỗi lần đẩy code.
 
 **Stack:** Java 21 | Spring Boot 3 | Spring Security (JSON Web Token) | Spring Data JPA | PostgreSQL | Flyway | springdoc OpenAPI | JUnit 5 | Docker | GitHub Actions
+https://shop-api-ncx0.onrender.com
 
 ---
 
