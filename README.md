@@ -6,6 +6,7 @@ Backend for a small online tea and coffee shop: a public catalogue, accounts, a 
 
 **Stack:** Java 21 | Spring Boot 3 | Spring Security (JSON Web Token) | Spring Data JPA | PostgreSQL | Flyway | springdoc OpenAPI | JUnit 5 | Docker | GitHub Actions
 https://shop-api-ncx0.onrender.com
+https://shop-web-gamma-five.vercel.app/
 
 ---
 
