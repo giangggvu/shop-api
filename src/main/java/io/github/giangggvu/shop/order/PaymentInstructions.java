@@ -33,7 +33,9 @@ public class PaymentInstructions {
             .append("?amount=").append(order.getTotal())
             .append("&addInfo=").append(encode(order.getCode()));
         if (hasText(config.accountName())) {
-            url.append("&accountName=").append(encode(config.accountName()));
+            String plainName = io.github.giangggvu.shop.common.Slugs.of(config.accountName())
+    .replace('-', ' ').toUpperCase(java.util.Locale.ROOT);
+url.append("&accountName=").append(encode(plainName));
         }
         return new PaymentView(
             config.bankId(), config.accountNo(), config.accountName(), order.getTotal(), order.getCode(), url.toString());
