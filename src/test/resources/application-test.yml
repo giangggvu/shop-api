@@ -1,4 +1,3 @@
-# Tests run on an in-memory H2 database in PostgreSQL mode, with the same Flyway migrations as production.
 spring:
   datasource:
     url: jdbc:h2:mem:shop;MODE=PostgreSQL;DB_CLOSE_DELAY=-1

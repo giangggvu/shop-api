@@ -18,11 +18,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
 
-/**
- * 401 and 403 are decided by Spring Security before any controller runs, so GlobalExceptionHandler never sees them.
- * This writes them in the same problem details shape as every other error. The standard Spring handlers still run
- * first, so the WWW-Authenticate header stays correct.
- */
+
 @Component
 class SecurityProblemHandler implements AuthenticationEntryPoint, AccessDeniedHandler {
 

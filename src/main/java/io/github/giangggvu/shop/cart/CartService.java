@@ -61,7 +61,7 @@ public class CartService {
             .orElseThrow(() -> new NotFoundException("Product " + productId + " not found"));
     }
 
-    /** A friendly early check. Checkout checks again under a row lock, because stock can change in between. */
+    
     private static void ensureInStock(Product product, int quantity) {
         if (quantity > product.getStock()) {
             throw new BusinessRuleException(product.getName() + ": only " + product.getStock() + " left in stock");

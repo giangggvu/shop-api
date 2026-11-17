@@ -18,10 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
-/**
- * Shared helpers for tests that call the API over HTTP. All test classes share one application and one
- * in-memory database, so every test creates its own users and products instead of relying on order.
- */
+
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")

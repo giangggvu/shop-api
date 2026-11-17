@@ -1,9 +1,6 @@
 package io.github.giangggvu.shop.order;
 
-/**
- * The life of an order. Each status lists where it may go next, so an order cannot, for example,
- * be shipped before it is paid, or brought back to life after it is cancelled.
- */
+
 public enum OrderStatus {
     PENDING_PAYMENT,
     PAID,

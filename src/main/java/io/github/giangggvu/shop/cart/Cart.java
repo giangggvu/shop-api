@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/** One cart per user, kept in the database so it survives logging in on another device. */
+
 @Entity
 @Table(name = "carts")
 public class Cart {

@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-/**
- * Every error leaves the API in the same shape (RFC 9457 problem details), so a client needs one error handler.
- */
+
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
@@ -57,10 +55,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return problem(HttpStatus.CONFLICT, "Conflict", "This was changed by someone else just now. Please reload and try again.");
     }
 
-    /**
-     * Anything unexpected. Without this, the error would be forwarded to /error, which Spring Security guards too,
-     * so an anonymous shopper would see a confusing 401 instead of 500. The real cause goes to the log only.
-     */
+    
     @ExceptionHandler(Exception.class)
     public ProblemDetail handleUnexpected(Exception ex) {
         log.error("Unexpected error", ex);

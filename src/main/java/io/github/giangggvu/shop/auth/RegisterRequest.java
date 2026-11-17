@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 
 public record RegisterRequest(
     @NotBlank @Email @Size(max = 255) String email,
-    // BCrypt reads at most 72 bytes of a password. 64 characters keeps ordinary passwords well inside that.
+    
     @NotBlank @Size(min = 8, max = 64) String password,
     @NotBlank @Size(max = 120) String fullName) {
 }

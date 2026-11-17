@@ -30,7 +30,7 @@ final class ProductSpecs {
         return (root, query, cb) -> cb.lessThanOrEqualTo(root.<Long>get("price"), max);
     }
 
-    /** A search for "100%" should look for the text "100%", not treat % as a wildcard. */
+    
     private static String escapeLike(String value) {
         return value.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_");
     }

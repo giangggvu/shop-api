@@ -17,7 +17,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Named ShopOrder for queries, because ORDER is a reserved word in SQL and JPQL. */
+
 @Entity(name = "ShopOrder")
 @Table(name = "orders")
 public class Order {
